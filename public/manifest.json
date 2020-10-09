@@ -1,6 +1,15 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Text Voice",
+  "name": "Text Voice",
+  "permissions": [
+    "tabs",
+    "bookmarks",
+    "http://www.blogger.com/",
+    "http://*.google.com/",
+    "unlimitedStorage",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
   "icons": [
     {
       "src": "favicon.ico",

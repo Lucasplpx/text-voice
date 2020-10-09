@@ -2,37 +2,98 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  letter-spacing: 6px;
+  margin-bottom: 23px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+textarea {
+  background-color: #d3e0f5;
+  border-radius: 5px;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  padding: 6px;
+}
+
+div.acoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 130px;
+  width: 100%;
+  max-width: 450px;
+}
+
+div.acoes button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 80px;
+  margin: 10px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+div.acoes button span {
+  margin-left: 5px;
+}
+
+@media (max-width: 400px) {
+  textarea {
+    max-width: 300px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 300px) {
+  div.acoes {
+    flex-direction: column;
+    height: 250px;
   }
+
+  textarea {
+    max-width: 240px;
+  }
+}
+
+.bkpurple {
+  background: #492378;
+  color: #fff;
+}
+
+.bkpurple:hover {
+  background: #260f44;
+}
+
+.bkclean {
+  background: #3dadf2;
+  color: #fff;
+}
+
+.bkclean:hover {
+  background: #174c6d;
+}
+
+.bkstop {
+  background: #f20732;
+  color: #fff;
+}
+
+.bkstop:hover {
+  background: #690417;
 }
