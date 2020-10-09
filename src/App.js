@@ -11,6 +11,13 @@ function App() {
   const [text, setText] = useState('');
   const TXT_ERROR = 'Informe algum texto para reprodução!';
 
+  document.addEventListener('paste', (evt) => {
+    const textoCopy = (evt.clipboardData || window.clipboardData).getData(
+      'text'
+    );
+    console.log('Evento: ', textoCopy);
+  });
+
   const onChange = (evt) => {
     setText(evt.target.value);
   };
@@ -31,6 +38,11 @@ function App() {
     return speechSynthesis.cancel();
   };
 
+  const getTextCopy = () => {
+    document.execCommand('paste');
+    console.log('Execução paste', document.execCommand('paste'));
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -41,6 +53,7 @@ function App() {
           rows="15"
           value={text}
           onChange={onChange}
+          onClick={() => getTextCopy()}
         ></textarea>
         <div className="acoes">
           <button className="bkpurple" onClick={() => speak()}>
@@ -62,3 +75,6 @@ function App() {
 }
 
 export default App;
+
+
+// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
